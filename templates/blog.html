@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Measure Once Cut Thrice{% endblock %}
+{% block body %}
+<div align="right">
+    {% if canedit %}
+    <form action="{{ url_for('edit', userid = userid) }}">
+        <input type="submit" value="New Post">
+    </form>
+    {% endif %}
+    <form action="/home">
+        <input type="submit" value="Home">
+    </form>
+    <form action="/myblog">
+        <input type="submit" value="My Blog">
+    </form>
+    <form action="/logout">
+        <input type="submit" value="Logout">
+    </form>
+</div>
+<div align="center">
+    <h2> {{ user }}'s Blog </h2>
+    <br>
+    <h3> Posts </h3>
+    <ul>
+        {% for item in collection %}
+        <li>
+            <a href="{{ url_for('post', userid=userid, blogid=item[1]) }}">{{ item[0] }}</a> <br> <br>
+        </li>
+        {% endfor %}
+    </ul>
+    <br><br><br><br><br>
+</div>
+{% endblock %}

@@ -1,0 +1,126 @@
+quality_assurance DevLog
+
+leiJ -- 2019-10-20 21:07
+  Uploaded the first version of the design document.
+  Updated README.md to accurately reflect the team roles.
+
+maoG -- 2019-10-21 17:30
+  PROGRAMMING SUCKS
+    What Will We Do To Make Our Team More Awesome
+    1. Complete code in steps, to make sure that even if we do something and it breaks everything, we can clearly go back to the previous version and figure out what was wrong (and make sure to let each other know what was wrong so that we can learn from it)
+    2. Don't always turn to Google/StackOverflow/Quora when an error pops up, because many people on the Internet don't actually know what they're talking about since no one really knows what they're talking about and instead we should just consider amongst ourselves and possibly other classmates
+    3. Communicate well in our team, or else Fred will make walkways that no one actually asked for and Tom and Harry will probably enter a fist fight over the correct standards to use and no one will understand what Phil is doing and someone (or all of us) will end up completing the project at 4 AM on Monday right before dawn
+  Bonus: No matter what the problem is, always consider whether it would be smart to just restart your computer before you make it worse...
+
+leiJ -- 2019-10-21 18:22
+  SQLite Operations:
+    INNER JOIN:
+      * This operation returns rows from a table with corresponding rows from another table based on the join condition.
+      * INNER JOIN can be used to find the associated entries made by a user based on the user id or other identifiers.
+    LEFT JOIN:
+      * This operation returns rows from a table that can have corresponding rows from another table based on the join condition. The rows that do not have corresponding rows from the other table will have NULL values in place of the values from the other table.
+      * LEFT JOIN can be used to identify the entries for each topic where each topic can have one or more entr(ies) or no entry as represented by NULL.
+    CROSS JOIN:
+      * This operation returns a set of size N x M where N is the number of rows from a table and M is the number of rows from another table.
+      * CROSS JOIN can be used to identify all entries made for each relevant user. This can be useful in display all the entries made by a user under that user's page in our setup.
+
+nicholS -- 2019-10-21 22:02
+  Updates to design doc:
+      * Added specifications on what we are referring to when we use the terms "blog" and "entry"
+      * Added project name
+      * Added to our project components the ability to change the user's password, use a display name, and possibly display featured blogs based on number of views (these were based on good features we saw on other group's proposals)
+      * Made the site map clearer and added add post
+
+maoG -- 2019-10-22 18:47
+  HTML Progress:
+    * Created login.html template for the login page
+    * Created temporary file testTemplates.py in order to test templates simply
+    * Defined header variable "head" in app.py to fill in for each template (will stay uniform)
+
+maoG -- 2019-10-22 20:20
+  HTML Progress:
+    * Created signup.html and home.html templates for signup and homepages
+    * Implemented Jinja code blocks in homepage to display unordered list of blogs
+    * Added footers to each page
+
+leiJ -- 2019-10-23 08:40
+  Route Functions:
+    * Added functions for the following routes:
+      * /login
+      * /signup
+      * /home
+  Auth Module:
+    * Added functions for hash() and auth():
+
+maoG -- 2019-10-23 14:32
+  HTML Progress:
+    * Created blog.html and post.html templates for blog pages and posts
+
+nicholS -- 2019-10-23 23:34
+  Database:
+    * Made Users table that takes input username and Password
+    * Facilitated adding users to database
+    * Started functions for tables for individual users/blogs
+
+maoG -- 2019-10-24 14:29
+  HTML Progress:
+    * Created edit.html template, meaning that the templates are finished
+
+leiJ -- 2019-10-24 18:13
+  Clean Repository:
+    * Streamline the HTML templates with inheritance
+    * Streamline the builder file for SQLite3 by adding and removing necessary commands
+    * Added instructions for running this project
+    * Uploaded latest dbconn and dbfunc modules
+  Work on Routes and Auth Module:
+    * Updated hash() and auth() to take an app wide salt
+  *** Beware of breakage especially in the authentication process
+
+nicholS -- 2019-10-24 22:53
+   Database:
+     * tried to fix problems with adding to databases
+     * tried new login function
+
+nicholS -- 2019-10-25 19:53
+   Creating, Editing, and Deleting Blogs:
+     * Added create blog and delete blog to templates
+     * Added edit route to display edit.html for each post
+     * Added python methods to create, delete, and update Posts
+
+leiJ -- 2019-10-25 21:11
+  Reviewed and merged branches into master
+  Updated documentation
+
+maoG -- 2019-10-26 11:13
+  Adding Features:
+    * Added new post button
+    * Attempted to create connection between edit page and database (nicholS will continue)
+    * Fixed syntax throughout templates
+
+leiJ -- 2019-10-26 21:46
+  Reviewed and merged edit branch into master branch that allows the app to now:
+    * Edit
+    * Create Post
+  Fixed the problem with routing error and fetching data from database
+
+nicholS 2019-10-27 00:46
+  * worked on "my blog" redirecting to user blog
+  * edited post.html and blog.html templates to clean them up
+
+leiJ -- 2019-10-27 10:06
+  Reviewed and merged edit branch into master branch that allows the app to now:
+    * Delete Post
+    * Fixed problems with edit permissions
+    * Changed what session stores
+
+leiJ -- 2019-10-27 17:23
+  Reviewed and merged edit branch into master branch that allows the app to now:
+    * Change Settings
+    * Basic Search
+
+maoG -- 2019-10-27 19:09
+  Final Edits
+    * reviewed project as a whole (self demo)
+    * fixed bugs when user tries to edit someone else's stuff
+    * allowed user to edit the post title by changing the python code
+    * updated devlog and design doc

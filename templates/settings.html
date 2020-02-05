@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Measure Once Cut Thrice{% endblock %}
+{% block body %}
+<div align="right">
+    <form action="/home">
+        <input type="submit" value="Home">
+    </form>
+    <form action="/myblog">
+        <input type="submit" value="My Blog">
+    </form>
+    <form action="/logout">
+        <input type="submit" value="Logout">
+    </form>
+</div>
+<div align="center">
+    <form action="{{ url_for('changesettings', userid = userid) }}" id="editorMode">
+        {% if msg %}
+        {{ msg }}
+        {% endif %}
+        <h3>Change Your Display Name</h3>
+        Display Name: <input type="text" name="newdisplayname" value="{{displayname}}">
+        <br>
+        <h3>Change Your Password</h3>
+        Current Password: <input type="password" name="currentpassword">
+        <br>
+        New Password: <input type="password" name="newpassword">
+        <br>
+        Confirm New Password: <input type="password" name="confirm">
+        <br>
+        <input type="submit" value="Save">
+    </form>
+</div>
+{% endblock %}

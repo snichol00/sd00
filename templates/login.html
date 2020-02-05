@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block body %}
+<div align="center">
+    <h2> Welcome! </h2>
+    <br> {{ error }} <br> <br>
+    Login! <br> <br>
+    <!-- username and password form -->
+    <form action="/login">
+        Enter your username: <input type="text" name="username"> <br>
+        Enter your password: <input type="password" name="password"> <br> <br>
+        <input type="submit">
+    </form>
+    <br> <br>
+    Don't have an account?
+    <br> <br>
+    <form action="/signup">
+        <input type="submit" value="Register Now!">
+    </form>
+    <br> <br>
+</div>
+{% endblock %}
