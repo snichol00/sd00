@@ -3,6 +3,12 @@ from os import urandom, path
 from uuid import uuid4
 # Flask Lib
 from flask import Flask, g, session, redirect, url_for, render_template, request
+import os
+
+os.path.dirname(__file__)
+DIR = os.path.dirname(__file__) or '.'
+DIR += '/'
+
 
 # Custom Modules
 from utl.dbconn import conn, close
